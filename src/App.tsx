@@ -31,8 +31,24 @@ export default function App() {
   ];
 
   const moveNoButton = () => {
-    const randomX = Math.random() * (window.innerWidth - 300) - (window.innerWidth / 2 - 150);
-    const randomY = Math.random() * (window.innerHeight - 150) - (window.innerHeight / 2 - 75);
+    // Get the container dimensions
+    const container = document.querySelector('.bg-white.bg-opacity-95');
+    if (!container) return;
+    
+    const rect = container.getBoundingClientRect();
+    const buttonWidth = 200; // Approximate button width
+    const buttonHeight = 80; // Approximate button height
+    
+    // Calculate safe boundaries (with padding)
+    const maxX = (rect.width - buttonWidth) / 2 - 50;
+    const maxY = (rect.height - buttonHeight) / 2 - 50;
+    const minX = -(rect.width - buttonWidth) / 2 + 50;
+    const minY = -(rect.height - buttonHeight) / 2 + 50;
+    
+    // Generate random position within safe boundaries
+    const randomX = Math.random() * (maxX - minX) + minX;
+    const randomY = Math.random() * (maxY - minY) + minY;
+    
     setNoButtonPosition({ x: randomX, y: randomY });
     
     setNoButtonSize(prev => Math.max(prev - 0.1, 0.3));
