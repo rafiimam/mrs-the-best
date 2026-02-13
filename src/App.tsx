@@ -259,9 +259,9 @@ export default function App() {
             <p className="text-2xl text-gray-700 mb-4 font-bold">
               You just made me the HAPPIEST person alive! 🥰
             </p>
-            <p className="text-xl text-gray-600 italic">
-              Get ready for the BEST Valentine's Day ever! 🌹✨💝
-            </p>
+            <p className="text-xl text-gray-600 italic"> </p>
+              Get ready for the BEST Valentine's Day ever! 
+              <p className="text-xl text-gray-600 italic">Rafi🌹✨💝 Mahima</p>
             <div className="mt-8 text-6xl animate-spin-slow">
               💘
             </div>
